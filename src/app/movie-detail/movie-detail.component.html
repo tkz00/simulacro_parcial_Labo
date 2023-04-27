@@ -1,0 +1,13 @@
+<div *ngIf="selectedMovie" class="card">
+    <img [src]="selectedMovie.photo" class="card-img-top" alt="Movie Poster">
+    <div class="card-body">
+      <h5 class="card-title">{{ selectedMovie.name }}</h5>
+      <p class="card-text">Type: {{ selectedMovie.type }}</p>
+      <p class="card-text">Release Date: {{ selectedMovie.releaseDate | date }}</p>
+      <p class="card-text">Public Amount: {{ selectedMovie.publicAmount }}</p>
+    </div>
+  </div>
+  <div *ngIf="!selectedMovie">
+    <p>No movie selected</p>
+  </div>
+  

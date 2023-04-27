@@ -1,0 +1,22 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Release Date</th>
+            <th>Public Amount</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let movie of movies" [class.selected]="isSelected(movie)" (click)="selectMovie(movie)">
+            <td>{{ movie.id }}</td>
+            <td>{{ movie.name }}</td>
+            <td>{{ movie.type }}</td>
+            <td>{{ movie.releaseDate | date }}</td>
+            <td>{{ movie.publicAmount }}</td>
+            <img [src]="movie.photo" alt="Movie Photo" width="100" height="100">
+      </tr>
+    </tbody>
+</table>
+  

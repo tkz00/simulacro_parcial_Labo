@@ -1,0 +1,15 @@
+<div>
+    <h2>Movie Search</h2>
+    <app-movie-table [movies]="movies" (movieSelected)="onMovieSelected($event)"></app-movie-table>
+    <div class="row">
+        <div class="col-4">
+            <!-- Component 1 -->
+        </div>
+        <div class="col-4">
+          <app-movie-detail [selectedMovie]="selectedMovie"></app-movie-detail>
+        </div>
+        <div class="col-4">
+          <!-- Component 2 -->
+        </div>
+      </div>
+</div>
