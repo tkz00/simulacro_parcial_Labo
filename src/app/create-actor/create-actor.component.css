@@ -1,0 +1,21 @@
+.create-actor-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.create-actor-content {
+    flex-grow: 1;
+    display: flex;
+}
+
+.create-actor-form {
+    flex-grow: 1;
+}
+
+.country-table-column {
+    flex-basis: 30%; /* Adjust the width of the country table column as needed */
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+}

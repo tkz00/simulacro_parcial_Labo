@@ -1,0 +1,19 @@
+<div class="country-table-container">
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+            <th>Flag</th>
+            <th>Country</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let country of countries" (click)="onCountrySelect(country)" [ngClass]="{'selected': country === selectedCountry}">
+            <td>
+            <img src="{{ country.flagUrl }}" alt="{{ country.name }}" class="country-flag" />
+            </td>
+            <td>{{ country.name }}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+  

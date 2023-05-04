@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -13,6 +14,9 @@ import { MovieTableComponent } from './movie-table/movie-table.component';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 
 import { LocalStorageRepository } from './Repositories/LocalStorageRepository';
+import { CountryService } from './Services/country.service';
+import { HttpClientModule } from '@angular/common/http';
+import { CountryTableComponent } from './country-table/country-table.component';
 
 @NgModule({
   declarations: [
@@ -24,14 +28,18 @@ import { LocalStorageRepository } from './Repositories/LocalStorageRepository';
     ListActorComponent,
     ListMovieComponent,
     MovieTableComponent,
-    MovieDetailComponent
+    MovieDetailComponent,
+    CountryTableComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
-    { provide: 'DatabaseRepository', useClass: LocalStorageRepository}
+    { provide: 'DatabaseRepository', useClass: LocalStorageRepository},
+    CountryService
   ],
   bootstrap: [AppComponent]
 })
