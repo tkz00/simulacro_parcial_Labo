@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Country } from '../Models/country';
-import { CountryService } from '../Services/country.service';
+import { Country } from '../../Models/country';
+import { CountryService } from '../../Services/country.service';
 
 @Component({
   selector: 'app-country-table',

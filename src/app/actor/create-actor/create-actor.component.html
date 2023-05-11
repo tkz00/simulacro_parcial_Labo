@@ -1,0 +1,71 @@
+<div class="create-actor-container">
+    <form [formGroup]="actorForm" (ngSubmit)="createActor()" class="p-4">
+        <div class="create-actor-content">
+            <div class="create-actor-form">
+                <div class="mb-3">
+                    <label for="firstName" class="form-label">First Name:</label>
+                    <input type="text" class="form-control" id="firstName" formControlName="firstName">
+                    <div *ngIf="actorForm.get('firstName')!.invalid && actorForm.get('firstName')!.touched">
+                        <small class="invalid" *ngIf="actorForm.get('firstName')?.errors?.required">
+                            nombre requerido
+                        </small>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="lastName" class="form-label">Last Name:</label>
+                    <input type="text" class="form-control" id="lastName" formControlName="lastName">
+                    <div *ngIf="actorForm.get('lastName')!.invalid && actorForm.get('lastName')!.touched">
+                        <small class="invalid" *ngIf="actorForm.get('lastName')?.errors?.required">
+                            apellido requerido
+                        </small>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" class="form-control" id="email" formControlName="email">
+                    <div *ngIf="actorForm.get('email')!.invalid && actorForm.get('email')!.touched">
+                        <small class="invalid" *ngIf="actorForm.get('email')?.errors?.required">
+                            email requerido
+                        </small>
+                        <small class="invalid" *ngIf="actorForm.get('email')?.errors?.email">
+                            email sin formato
+                        </small>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="userName" class="form-label">Username:</label>
+                    <input type="text" class="form-control" id="userName" formControlName="userName">
+                    <div *ngIf="actorForm.get('userName')!.invalid && actorForm.get('userName')!.touched">
+                        <small class="invalid" *ngIf="actorForm.get('userName')?.errors?.required">
+                            usuario requerido
+                        </small>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="address" class="form-label">Address:</label>
+                    <input type="text" class="form-control" id="address" formControlName="address">
+                    <div *ngIf="actorForm.get('address')!.invalid && actorForm.get('address')!.touched">
+                        <small class="invalid" *ngIf="actorForm.get('address')?.errors?.required">
+                            dirección requerido
+                        </small>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" [disabled]="actorForm.invalid">Create</button>
+            </div>
+
+            <div class="country-table-column">
+                <app-country-table (countrySelected)="onCountrySelected($event)"></app-country-table>
+                <div *ngIf="actorForm.get('country')!.invalid && actorForm.get('country')!.touched">
+                    <small class="invalid" *ngIf="actorForm.get('country')?.errors?.required">
+                        pais requerido
+                    </small>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

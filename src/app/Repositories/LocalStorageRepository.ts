@@ -91,7 +91,7 @@ export class LocalStorageRepository implements DataRepository {
       }
       return Promise.resolve(undefined);
     }
-  
+
     deleteActor(id: number): Promise<boolean> {
       let actors = this.getActorsFromLocalStorage();
       const index = actors.findIndex((a) => a.id === id);
@@ -101,6 +101,11 @@ export class LocalStorageRepository implements DataRepository {
         return Promise.resolve(true);
       }
       return Promise.resolve(false);
+    }
+
+    getActors(): Promise<Actor[]> {
+      const actors = this.getActorsFromLocalStorage();
+      return Promise.resolve(actors);
     }
   }
   

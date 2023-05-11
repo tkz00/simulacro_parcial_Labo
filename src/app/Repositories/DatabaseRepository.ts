@@ -12,4 +12,5 @@ export interface DataRepository {
     getActorById(id: number): Promise<Actor | undefined>;
     updateActor(actor: Actor): Promise<Actor | undefined>;
     deleteActor(id: number): Promise<boolean>;
+    getActors(): Promise<Actor[]>;
 }

@@ -1,0 +1,10 @@
+<div *ngIf="country" class="card">
+    <img [src]="country.flagUrl" class="card-img-top" alt="Movie Poster">
+    <div class="card-body">
+      <h5 class="card-title">{{ country.name }}</h5>
+    </div>
+</div>
+<div *ngIf="!country">
+    <p>No movie selected</p>
+</div>
+  

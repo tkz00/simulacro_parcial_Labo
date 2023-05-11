@@ -1,9 +1,9 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { Actor } from '../Models/actor';
-import { Country } from '../Models/country';
+import { Actor } from 'src/app/Models/actor';
+import { Country } from 'src/app/Models/country';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { DataRepository } from '../Repositories/DatabaseRepository';
-import { CountryService } from '../Services/country.service';
+import { DataRepository } from 'src/app/Repositories/DatabaseRepository';
+import { CountryService } from 'src/app/Services/country.service';
 
 @Component({
   selector: 'app-create-actor',

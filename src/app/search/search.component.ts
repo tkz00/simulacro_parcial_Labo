@@ -12,7 +12,9 @@ export class SearchComponent implements OnInit {
   movies: Movie[] = [];
   selectedMovie: Movie | undefined;
 
-  constructor(@Inject('DatabaseRepository') private repository : DataRepository) {}
+  constructor(
+    @Inject('DatabaseRepository') private repository : DataRepository
+  ) {}
 
   ngOnInit(): void {
     this.repository.getMovies().then((movies) => {

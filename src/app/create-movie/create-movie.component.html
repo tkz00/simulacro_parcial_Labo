@@ -1,1 +1,68 @@
-<p>create-movie works!</p>
+<div class="create-movie-container">
+    <form [formGroup]="movieForm" (ngSubmit)="createMovie()" class="p-4">
+        <div class="create-movie-content">
+            <div class="create-movie-form">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name:</label>
+                    <input type="text" class="form-control" id="name" formControlName="name">
+                    <div *ngIf="movieForm.get('name')!.invalid && movieForm.get('name')!.touched">
+                        <small class="invalid" *ngIf="movieForm.get('name')?.errors?.required">
+                            name is required
+                        </small>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="type" class="form-label">Type:</label>
+                    <input type="text" class="form-control" id="type" formControlName="type">
+                    <div *ngIf="movieForm.get('type')!.invalid && movieForm.get('type')!.touched">
+                        <small class="invalid" *ngIf="movieForm.get('type')?.errors?.required">
+                            type is required
+                        </small>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="releaseDate" class="form-label">Release Date:</label>
+                    <input type="date" class="form-control" id="releaseDate" formControlName="releaseDate">
+                    <div *ngIf="movieForm.get('releaseDate')!.invalid && movieForm.get('releaseDate')!.touched">
+                        <small class="invalid" *ngIf="movieForm.get('releaseDate')?.errors?.required">
+                            release date is required
+                        </small>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="publicAmount" class="form-label">Public Amount:</label>
+                    <input type="number" class="form-control" id="publicAmount" formControlName="publicAmount">
+                    <div *ngIf="movieForm.get('publicAmount')!.invalid && movieForm.get('publicAmount')!.touched">
+                        <small class="invalid" *ngIf="movieForm.get('publicAmount')?.errors?.required">
+                            public amount is required
+                        </small>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="photo" class="form-label">Photo:</label>
+                    <input type="file" class="form-control" id="photo" formControlName="photo">
+                    <div *ngIf="movieForm.get('photo')!.invalid && movieForm.get('photo')!.touched">
+                        <small class="invalid" *ngIf="movieForm.get('photo')?.errors?.required">
+                            photo is required
+                        </small>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" [disabled]="movieForm.invalid">Create</button>
+            </div>
+
+            <div class="actor-table-column">
+                <app-actor-table (actorSelected)="onActorSelected($event)"></app-actor-table>
+                <div *ngIf="movieForm.get('actor')!.invalid && movieForm.get('actor')!.touched">
+                    <small class="invalid" *ngIf="movieForm.get('actor')?.errors?.required">
+                        pais requerido
+                    </small>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

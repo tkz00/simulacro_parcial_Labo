@@ -1,0 +1,14 @@
+<app-actor-table (actorSelected)="onActorSelected($event)"></app-actor-table>
+<div class="row">
+    <div class="col-4">
+        <div class="border">
+            <app-movie-table [movies]="movies"></app-movie-table>
+        </div>
+    </div>
+    <div class="col-4">
+        <app-country-detail [country]="country"></app-country-detail>
+    </div>
+    <div class="col-4">
+        <app-actor-detail [actor]="selectedActor"></app-actor-detail>
+    </div>
+</div>
